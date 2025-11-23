@@ -7,5 +7,5 @@ export interface UserDTO {
 
     factorId?: string;
     isMFAValidated?: boolean;
-    isFirstMFAAcess?: boolean;
+    isFirstMFAAccess?: boolean;
 }

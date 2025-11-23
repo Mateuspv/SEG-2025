@@ -7,11 +7,9 @@ import { AuthModule } from './cases/auth/auth.module';
 
 @Module({
   imports: [
-    //Configuração global
     ConfigModule.forRoot({
       isGlobal: true
     }),
-    //Configuração de banco
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST,
@@ -20,12 +18,11 @@ import { AuthModule } from './cases/auth/auth.module';
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: true
     }),
     SupabaseModule,
     AuthModule,
-    UserModule,
-    
-  ],
+    UserModule
+  ]
 })
 export class AppModule {}
